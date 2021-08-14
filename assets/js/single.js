@@ -41,6 +41,7 @@ var displayIssues = function (issues) {
         var issueEl = document.createElement("a");
         issueEl.classList = "list-item flex-row justify-space-between align-center";
         issueEl.setAttribute("href", issues[i].html_url);
+        console.log(issues[i].html_url);
         issueEl.setAttribute("target", "_blank");
         issueEl.textContent = issues[i].title;
         issueContainerEl.appendChild(issueEl);
@@ -62,10 +63,9 @@ var getRepoIssues = function (repo) {
             });
         }
         else {
-            alert("There was a problem with your request!");
+            document.location.replace("./index.html");
         }
     });
-    console.log(repo);
 };
 
 getRepoName()
